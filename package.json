@@ -1,28 +1,15 @@
 {
-  "name": "smarthire-ai-frontend",
+  "name": "smarthire-ai",
   "version": "1.0.0",
-  "private": true,
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3",
-    "react-scripts": "5.0.1",
-    "axios": "^1.6.8",
-    "recharts": "^2.12.3",
-    "react-dropzone": "^14.2.3",
-    "react-hot-toast": "^2.4.1",
-    "react-icons": "^5.1.0",
-    "jspdf": "^2.5.1",
-    "html2canvas": "^1.4.1",
-    "date-fns": "^3.6.0"
-  },
+  "description": "SmartHire AI — Full-Stack Resume Screening System powered by Google Gemini",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "backend": "npm run dev --prefix backend",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "build:frontend": "npm run build --prefix frontend"
   },
-  "proxy": "http://localhost:5000",
-  "browserslist": {
-    "production": [">0.2%", "not dead"],
-    "development": ["last 1 chrome version"]
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
